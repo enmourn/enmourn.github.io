@@ -1,13 +1,23 @@
-import { Grid, GridItem, Heading } from "@chakra-ui/react";
+import styled from "styled-components";
+
+const Section = styled.section`
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 1216px;
+  margin: auto;
+`
+const Content = styled.div`
+  grid-column: 1/8;
+  background: 'red';
+`
+
 
 export default function Skills() {
   return (
-    <Grid templateColumns='repeat(12, 1fr)' gap='20px'>
-      <GridItem colStart='1' colEnd='9'>
-        <Heading as='h1' mt='10px'>Web Development</Heading>
-        <Heading as='h2' mt='36px' ml='30px'>Skills</Heading>
-      </GridItem>
-      <GridItem colStart='9' colEnd='12'>123</GridItem>
-    </Grid>
+    <Section>
+      <Content>
+        <h1>Web Development</h1>
+        <h2>Skills</h2>
+      </Content>
+    </Section>
   )
 }

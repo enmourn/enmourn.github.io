@@ -1,47 +1,36 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { createGlobalStyle } from "styled-components"
 import '@fontsource/coda/400.css'
 
-const theme = extendTheme({
-  styles: {
-    global: {
-      'body': {
-        bg: 'url(/bg.png)',
-        fontFamily: `'Coda', sans-serif`
-      },
-      'h1': {
-        color: 'var(--chakra-colors-brand-3)',
-        fontSize: '40px!important'
-      },
-      'h2': {
-        color: 'var(--chakra-colors-brand-2)',
-        fontSize: '24px!important'
-      }
-    }
-  },
-  colors: {
-    brand: {
-      2: '#58FFC3',
-      3: '#FFD058'
-    }
-  },
-  components: {
-    Heading: {
-      baseStyle: {
-        fontFamily: `'Coda', sans-serif`,
-        fontWeight: 'normal'
-      }
-    }
+const GlobalStyle = createGlobalStyle`
+  :root {
+    --color-0: #1A1A1A;
+    --color-1: white;
+    --color-2: #58FFC3;
+    --color-3: #FFD058;
   }
-})
+  body {
+    background: url('/bg.png');
+    font-family: 'Coda', sans-serif;
+    margin: 0;
+  }
+  h1 {
+    color: var(--color-3);
+    font-size: 40px;
+    font-weight: normal;
+  }
+  h2 {
+    color: var(--color-2);
+    font-size: 24px;
+    font-weight: normal
+  }
+`
 
-const rootElement = document.getElementById('root')
-ReactDOM.createRoot(rootElement).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
+    <GlobalStyle />
+    <App />
   </React.StrictMode>,
 )
