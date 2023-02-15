@@ -10,6 +10,7 @@ const animateNavItems = keyframes`
 `
 const Section = styled.header`
   width: 100vw;
+  max-width: 100%;
   height: 60px;
   position: relative;
   &::before {
@@ -26,13 +27,13 @@ const Section = styled.header`
   }
 `
 const Nav = styled.nav`
-  max-width: 1216px;
+  max-width: 1200px;
+  padding: 0 50px;
   height: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   color: var(--color-1);
-  padding: 0 30px;
 `
 const Menu = styled.div`
   grid-column: 1/9;
@@ -40,13 +41,15 @@ const Menu = styled.div`
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  padding: 0 30px;
 `
 const Socials = styled.div`
-  grid-column: 9/12;
+  grid-column: 9/13;
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
+  padding: 0 30px;
 `
 const Link = styled.a`
   display: flex;
@@ -76,7 +79,7 @@ export default function Header() {
     <Section>
       <Nav>
         <Menu>
-          <Link href="#skills" delay={0.1}>Skills</Link>
+          <Link href="#skills" delay={0}>Skills</Link>
           <Link href="#current-project" delay={0.2}>Current Projects</Link>
           <Link href="education-experience" delay={0.4}>Education / Experience</Link>
           <Link href="about-me" delay={0.6}>About me</Link>  
