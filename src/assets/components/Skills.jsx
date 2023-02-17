@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Code from "./Code";
+import { Button } from './Common';
 
 const Section = styled.section`
   display: grid;
@@ -8,6 +9,7 @@ const Section = styled.section`
   max-width: 1200px;
   padding: 0 50px;
   margin: auto;
+  padding-bottom: 40px;
 `
 const Content = styled.div`
   grid-column: 1/9;
@@ -23,17 +25,6 @@ const Profile = styled.div`
     width: 100%;
   }
 `
-const Button = styled.button`
-  background-color: ${props => props.primary ? 'var(--color-3)': 'var(--color-0)'};
-  color: ${props => props.primary ? 'var(--color-0)': 'var(--color-2)'};
-  border: none;
-  border-radius: 30px;
-  padding: 9px 32px;
-  font-family: 'DM Mono';
-  font-size: 14px;
-  margin-top: ${props => props.mt}px;
-  cursor: pointer;
-`
 
 export default function Skills() {
   return (
@@ -45,8 +36,10 @@ export default function Skills() {
       </Content>
       <Profile>
         <img src="/avatar.png" />
-        <Button primary mt={20}>Contact me</Button>
-        <Button mt={10}>Download CV</Button>
+        <div>
+          <Button primary mt={30}>Contact me</Button>
+          <Button ml={10}>Download CV</Button>
+        </div>
       </Profile>
     </Section>
   )

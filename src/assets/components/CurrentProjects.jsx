@@ -1,26 +1,83 @@
 import styled from "styled-components"
 
 const Section = styled.section`
-  width: 100wv;
-  margin: auto;
-  display: grid;
+  width: 100%;
+  position: relative;
+  padding-bottom: 40px;
   &::before {
     content: '';
     display: block;
-    width: calc(100vw + 100px);
-    height: 540px;
-    background: #353535;
-    opacity: 50%;
+    width: 100%;
+    height: calc(100% + 120px);
+    background-color: #353535;
     position: absolute;
-    left: -50px;
-    top: 430px;
-    transform: rotate(-2deg);
     z-index: -1;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -120px) skew(0, -2deg);
+    opacity: 0.6;
+  }
+`
+const Content = styled.div`
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 50px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  h2 {
+    grid-column: 1/5;
+  }
+`
+const Project = styled.div`
+  img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  div {
+    background-color: var(--color-0);
+    color: var(--color-3);
+    padding: 5px 20px;
+    border-radius: 8px;
+    font-size: 17px;
+  }
+  p {
+    color: white;
   }
 `
 
 export default function CurrentProjects() {
   return (
-    <Section>123</Section>
+    <Section>
+      <Content>
+        <h2>Current projects</h2>
+        <Project>
+          <img src="./projects/bandstats-1.png" />
+          <div>BandStats</div>
+          <p>A simple and convenient tool for evaluating the activity of a group and its members</p>
+          <p>Tech stack: React, React Router, Chart.js, Chakra, Firebase, Vite</p>
+          <p>To do: redesign, add new statistic params</p>
+        </Project>
+        <Project><img src="./projects/portfolio-1.png" />
+          <div>Portfolio</div>
+          <p>It's my web portfolio where you can fine some information about my skills, experience, current projects, and send me message</p>
+          <p>Tech stack: React, Styled Components</p>
+          <p>To do: add light theme and language switcher</p>
+        </Project>
+        <Project><img src="./projects/canvas-game-1.png" />
+          <div>Canvas Game</div>
+          <p>Here am learning base principles of game development, creating unusual labyrinth game</p>
+          <p>Tech stack: Pure JavaScript ES6, Canvas, Vite</p>
+          <p>To do: make it playable</p>
+        </Project>
+        <Project><img src="./projects/shop-1.png" />
+          <div>Shop</div>
+          <p>Internet store, completely under development</p>
+          <p>Tech stack: React, React Router, Firebase, Vite</p>
+          <p>To do: make all</p>
+        </Project>
+      </Content>
+    </Section>
   )
 }

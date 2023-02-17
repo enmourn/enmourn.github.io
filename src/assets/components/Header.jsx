@@ -42,6 +42,7 @@ const Menu = styled.div`
   justify-content: space-between;
   list-style: none;
   padding: 0 30px;
+  font-size: 17px;
 `
 const Socials = styled.div`
   grid-column: 9/13;

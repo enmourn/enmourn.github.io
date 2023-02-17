@@ -17,19 +17,20 @@ const GlobalStyle = createGlobalStyle`
     background: url('/bg.png');
     font-family: 'Coda', sans-serif;
     margin: 0;
-    overflow-x: hidden;
+    font-size: 15px;
   }
   h1 {
     color: var(--color-3);
     font-size: 40px;
     font-weight: normal;
-    margin: 8px 0 0 0;
+    margin: 20px 0 0 0;
+    line-height: 1;
   }
   h2 {
     color: var(--color-2);
     font-size: 24px;
     font-weight: normal;
-    margin: 28px 0 0 30px;
+    margin: 30px 0 20px 60px;
   }
 `
 

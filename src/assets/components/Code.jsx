@@ -4,10 +4,9 @@ const Container = styled.div`
   position: relative;
   background-color: var(--color-0);
   border-radius: 8px;
-  margin-top: 20px;
   padding: 10px 10px 0px 60px;
   font-family: 'DM Mono';
-  font-size: 14px;
+  /* font-size: 15px; */
   overflow: hidden;
   &:before {
     content: '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32';
@@ -38,13 +37,18 @@ const Line = styled.div`
     color: #353535;
   }
 `
+const Mark = styled.mark`
+  background: none;
+  color: var(--color-1);
+`
 
 export default function Code(props) {
   return (
     <Container>
       <Line color='var(--color-1)'>Hello, world {`{`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-3)'>My name is Ivan, I'm a web developer with 5 years of professional experience. In&nbsp;my work I used the following technologies:</Line>
+      <Line tab={1} color='var(--color-3)'>
+        My name is <Mark>Ivan</Mark>, I'm a <Mark>web developer</Mark> with <Mark>5 years</Mark> of professional experience. In&nbsp;my work I used the following technologies:</Line>
       <Line tab={1}>&nbsp;</Line>
       <Line tab={1} color='var(--color-2)'>Frontend development {`{`}</Line>
       <Line tab={2} color='var(--color-1)'>HTML, JavaScript, React, React Router, Vue, jQuery, CSS, SCSS, Styled Compontnts, Chakra, Gulp, Webpack, CRA, Vite</Line>
@@ -58,7 +62,7 @@ export default function Code(props) {
       <Line tab={2} color='var(--color-1)'>Git, Docker, Figma, Photoshop</Line>
       <Line tab={1} color='var(--color-2)'>{`}`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-3)'>I will be glad to cooperate&nbsp;=)</Line>
+      <Line tab={1} color='var(--color-3)'>I will be glad to cooperate! Thanks {`=>`}</Line>
       <Line color='var(--color-1)'>{`}`}</Line>
       <Line last>&nbsp;</Line>
     </Container>
