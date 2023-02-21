@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "./Common"
 
 const Container = styled.div`
   position: relative;
@@ -6,7 +7,6 @@ const Container = styled.div`
   border-radius: 8px;
   padding: 10px 10px 0px 60px;
   font-family: 'DM Mono';
-  /* font-size: 15px; */
   overflow: hidden;
   &:before {
     content: '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32';
@@ -19,6 +19,9 @@ const Container = styled.div`
     color: #4f4e4e;
     border-right: 1px solid #252525;
     text-align: end;
+  }
+  ${device.tablet} {
+    font-size: 14px;
   }
 `
 const Line = styled.div`

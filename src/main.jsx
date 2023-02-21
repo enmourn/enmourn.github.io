@@ -11,13 +11,24 @@ const GlobalStyle = createGlobalStyle`
     --color-1: white;
     --color-2: #58FFC3;
     --color-3: #FFD058;
-    --color-6: #4f4e4e
+    --color-3-light: #f8e2a9;
+    --color-6: #4f4e4e;
+    --color-7: #353535;
   }
   body {
-    background: url('/bg.png');
+    background-image: url('/bg.png');
     font-family: 'Coda', sans-serif;
     margin: 0;
     font-size: 15px;
+    overflow: overlay;
+    &::-webkit-scrollbar {
+      width: 8px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-0);
+      border-radius: 10px;
+    }
   }
   h1 {
     color: var(--color-3);

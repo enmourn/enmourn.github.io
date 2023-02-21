@@ -1,33 +1,44 @@
 import styled from "styled-components"
+import { device } from "./Common"
 
 const Section = styled.section`
   width: 100%;
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   &::before {
     content: '';
     display: block;
     width: 100%;
-    height: calc(100% + 120px);
-    background-color: #353535;
+    height: calc(100% + 100px);
+    background-color: var(--color-6);
     position: absolute;
     z-index: -1;
     left: 50%;
     top: 0;
-    transform: translate(-50%, -120px) skew(0, -2deg);
+    transform: translate(-50%, -100px) skew(0, -2deg);
     opacity: 0.6;
+  }
+  ${device.tablet} {
+    padding-bottom: 20px;
   }
 `
 const Content = styled.div`
   max-width: 1200px;
   margin: auto;
-  padding: 0 50px;
+  padding: 0 30px;
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   h2 {
     grid-column: 1/5;
+  }
+  ${device.mobileL} {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    h2 {
+      grid-column: 1/3
+    }
   }
 `
 const Project = styled.div`
@@ -43,7 +54,7 @@ const Project = styled.div`
     font-size: 17px;
   }
   p {
-    color: white;
+    color: var(--color-1);
   }
 `
 

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Button } from "./Common"
+import { Button, device } from "./Common"
 
 const Section = styled.footer`
   position: relative;
@@ -19,23 +19,19 @@ const Section = styled.footer`
   }
 `
 const Content = styled.div`
-  width: 100%;
   height: 100%;
   max-width: 1200px;
-  padding: 0 50px;
+  padding: 0 30px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  position: relative;
   form {
     grid-column: 1/2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    max-width: 500px;
+    max-width: 540px;
     margin-top: 30px;
-    padding-left: 60px;
     span {
       font-size: 40px;
       color: var(--color-3);
@@ -61,15 +57,35 @@ const Content = styled.div`
       padding-right: 50px;
     }
   }
+  ${device.laptop} {
+    form {
+      margin-left: 40px;
+    }
+  }
+  ${device.mobileL} {
+    form {
+      margin-left: 0;
+    }
+  }
+  ${device.mobileM} {
+    padding-bottom: 20px;
+    form {
+      grid-template-columns: 1fr;
+      span, input, textarea {
+        grid-column: auto;
+      }
+    }
+  }
 `
 const Copyright = styled.div`
-  grid-column: 2/3;
-  width: 100%;
-  text-align: center;
-  margin-right: 200px;
-  position: relative;
+  position: absolute;
+  right: 30px;
+  bottom: 48px;
   color: #353535;
-  font-size: 14px;
+  font-size: 13px;
+  ${device.mobileM} {
+    bottom: 28px;
+  }
 `
 
 export default function Footer() {
@@ -84,7 +100,6 @@ export default function Footer() {
           <textarea name="message" placeholder="Message" rows="7"></textarea>
           <Button primary>Send</Button>
         </form>
-        <div></div>
         <Copyright>© Mishin I. V., 2023</Copyright>
       </Content>
     </Section>

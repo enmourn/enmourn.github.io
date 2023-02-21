@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components"
+import { device } from "./Common"
 
 const animateLine = keyframes`
   from { width: 0 }
@@ -8,6 +9,7 @@ const animateNavItems = keyframes`
   from { opacity: 0 }
   to { opacity: 1 }
 `
+
 const Section = styled.header`
   width: 100vw;
   max-width: 100%;
@@ -26,14 +28,19 @@ const Section = styled.header`
     animation: ${animateLine} 1 2s
   }
 `
-const Nav = styled.nav`
+const Contant = styled.nav`
   max-width: 1200px;
-  padding: 0 50px;
+  padding: 0 30px;
   height: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   color: var(--color-1);
+  ${device.tablet} {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
 `
 const Menu = styled.div`
   grid-column: 1/9;
@@ -43,6 +50,15 @@ const Menu = styled.div`
   list-style: none;
   padding: 0 30px;
   font-size: 17px;
+  ${device.tablet} {
+    position: absolute;
+    left: 40px;
+    top: 60px;
+    display: none;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-6);
+  }
 `
 const Socials = styled.div`
   grid-column: 9/13;
@@ -50,50 +66,74 @@ const Socials = styled.div`
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 30px;
 `
-const Link = styled.a`
+const LineBlock = styled.div`
+  height: 100%;
   display: flex;
+  align-items: center;
+  gap: 10px;
   position: relative;
   opacity: 0;
-  color: var(--color-1);
-  text-decoration: none;
   animation-name: ${animateNavItems};
   animation-fill-mode: forwards;
   animation-duration: 0.5s;
   animation-delay: ${props => props.delay}s;
-  &::before {
+  a {
+    display: flex;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: var(--colo-1);
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &:before {
     content: '';
     display: block;
-    width: calc(100% + 20px);
+    width: calc(110% + 20px);
     height: 1px;
     background: #242424;
     position: absolute;
-    left: -10px;
+    left: calc(-5% - 10px);
     top: 50%;
     z-index: -1;
+  }
+`
+const Humburger = styled(LineBlock)`
+  display: none;
+  ${device.tablet} {
+    display: flex;
   }
 `
 
 export default function Header() {
   return (
     <Section>
-      <Nav>
+      <Contant>
+          <Humburger>
+            <img src="/humburger.svg"/>
+          </Humburger>
         <Menu>
-          <Link href="#skills" delay={0}>Skills</Link>
-          <Link href="#current-project" delay={0.2}>Current Projects</Link>
-          <Link href="education-experience" delay={0.4}>Education / Experience</Link>
-          <Link href="about-me" delay={0.6}>About me</Link>  
+          <LineBlock delay={0}>
+            <a href="#skills">Skills</a>
+          </LineBlock>
+          <LineBlock delay={0.2}>
+            <a href="#current-project">Current Projects</a>
+          </LineBlock>
+          <LineBlock delay={0.4}>
+            <a href="education-experience">Education / Experience</a>
+          </LineBlock>
+          <LineBlock delay={0.6}>
+            <a href="about-me">About me</a>
+          </LineBlock>  
         </Menu>
         <Socials>
-          <Link href="https://t.me/enmourn" target="_blank" delay={0.8}>
-            <img src="/telegram.svg" />
-          </Link>
-          <Link href="https://www.instagram.com/en_mourn" target="_blank" delay={0.8}>
-            <img src="/instagram.svg" />
-          </Link>
+          <LineBlock delay={0.8}>
+            <a href="https://t.me/enmourn" target="_blank"><img src="/telegram.svg" /></a>
+            <a href="https://www.instagram.com/en_mourn" target="_blank"><img src="/instagram.svg" /></a>
+          </LineBlock>
         </Socials>
-      </Nav>
+      </Contant>
     </Section>
   )
 }

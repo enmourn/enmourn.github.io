@@ -1,16 +1,24 @@
 import styled from "styled-components"
+import { device } from "./Common"
 
 const Section = styled.section`
   max-width: 1200px;
   margin: auto;
-  padding: 0 50px;
+  padding: 0 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  padding-bottom: 60px;
-  margin-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 50px;
   h2 {
     grid-column: 1/4;
+  }
+  ${device.mobileL} {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    h2 {
+      grid-column: auto;
+    }
   }
 `
 const Item = styled.div`
