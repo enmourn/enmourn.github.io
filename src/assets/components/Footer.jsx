@@ -10,12 +10,13 @@ const Section = styled.footer`
     display: block;
     width: 100%;
     height: calc(100%);
-    background-color: var(--color-0);
+    background-color: black;
+    opacity: 0.6;
     position: absolute;
     z-index: -1;
     top: 30px;
     left: 0;
-    transform: skew(0, 2deg);
+    transform: skew(0, -2deg);
   }
 `
 const Content = styled.div`
@@ -26,16 +27,17 @@ const Content = styled.div`
   padding-bottom: 40px;
   position: relative;
   form {
-    grid-column: 1/2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     max-width: 540px;
     margin-top: 30px;
+    margin-left: 500px;
     span {
       font-size: 40px;
       color: var(--color-3);
       grid-column: 1/3;
+      text-align: right;
     }
     input, textarea {
       background: var(--color-0);

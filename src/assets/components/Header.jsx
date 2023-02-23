@@ -1,3 +1,4 @@
+import { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { device } from "./Common"
 
@@ -54,7 +55,7 @@ const Menu = styled.div`
     position: absolute;
     left: 40px;
     top: 60px;
-    display: none;
+    display: ${props => props.active ? 'grid' : 'none'};
     padding: 20px;
     border-radius: 8px;
     background-color: var(--color-6);
@@ -107,13 +108,14 @@ const Humburger = styled(LineBlock)`
 `
 
 export default function Header() {
+  const [menuActive, setMenuActive] = useState(false)
   return (
     <Section>
       <Contant>
-          <Humburger>
-            <img src="/humburger.svg"/>
-          </Humburger>
-        <Menu>
+        <Humburger onClick={() => setMenuActive(!menuActive)}>
+          <img src="/humburger.svg"/>
+        </Humburger>
+        <Menu active={menuActive}>
           <LineBlock delay={0}>
             <a href="#skills">Skills</a>
           </LineBlock>

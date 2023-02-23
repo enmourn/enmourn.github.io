@@ -8,8 +8,21 @@ const Section = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  padding-bottom: 30px;
-  margin-top: 50px;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  position: relative;
+  &::before {
+    content: '';
+    width: 100vw;
+    height: calc(100% + 30px);
+    /* background: #005f3c; */
+    background: #000000;
+    position: absolute;
+    z-index: -1;
+    left: calc(50% - 50vw);
+    transform: skew(0, -2deg) translateY(-30px);
+    opacity: 0.6;
+  }
   h2 {
     grid-column: 1/4;
   }

@@ -19,14 +19,15 @@ const GlobalStyle = createGlobalStyle`
     background-image: url('/bg.png');
     font-family: 'Coda', sans-serif;
     margin: 0;
-    font-size: 15px;
+    font-size: 16px;
     overflow: overlay;
     &::-webkit-scrollbar {
       width: 8px;
       background: transparent;
+      display: none;
     }
     &::-webkit-scrollbar-thumb {
-      background: var(--color-0);
+      background: var(--color-7);
       border-radius: 10px;
     }
   }
