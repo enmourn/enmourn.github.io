@@ -10,6 +10,7 @@ const Section = styled.section`
   padding: 0 30px;
   margin: auto;
   padding-bottom: 30px;
+  position: relative;
   h1 {
     grid-column: 1/9;
   }
@@ -46,7 +47,7 @@ const Profile = styled.div`
   display: grid;
   justify-items: center;
   align-content: flex-start;
-  margin-top: -60px;
+  margin-top: -30px;
   img {
     width: 100%;
   }

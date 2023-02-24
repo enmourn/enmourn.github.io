@@ -40,7 +40,7 @@ const Contant = styled.nav`
   ${device.tablet} {
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 0 10px;
   }
 `
 const Menu = styled.div`
@@ -93,7 +93,7 @@ const LineBlock = styled.div`
     display: block;
     width: calc(110% + 20px);
     height: 1px;
-    background: #242424;
+    background: #121212;
     position: absolute;
     left: calc(-5% - 10px);
     top: 50%;

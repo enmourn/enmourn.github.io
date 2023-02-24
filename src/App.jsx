@@ -12,7 +12,6 @@ function App() {
       <Skills />
       <CurrentProjects />
       <EducationExperience />
-      <AboutMe />
       <Footer />
     </>
   )

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 const BaseComponent = styled.div`
   width: ${props => props.w};
@@ -10,7 +10,6 @@ const BaseComponent = styled.div`
   margin-bottom: ${props => props.mb};
   margin-left: ${props => props.ml};
 `
-const ButtonComponent = BaseComponent.withComponent('button')
 
 export const device = {
   laptop: `@media (max-width: 1280px)`,
@@ -18,8 +17,51 @@ export const device = {
   mobileL: `@media (max-width: 768px)`,
   mobileM: `@media (max-width: 480px)`
 }
+
+export const GlobalStyle = createGlobalStyle`
+  :root {
+    --color-0: #1A1A1A;
+    --color-1: white;
+    --color-2: #58FFC3;
+    --color-3: #FFD058;
+    --color-3-light: #f8e2a9;
+    --color-6: #4f4e4e;
+    --color-7: #353535;
+  }
+  body {
+    background-image: url('/bg.png');
+    font-family: 'Coda', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    overflow: overlay;
+    &::-webkit-scrollbar {
+      width: 8px;
+      background: transparent;
+      display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-7);
+      border-radius: 10px;
+    }
+  }
+  h1 {
+    color: var(--color-3);
+    font-size: 40px;
+    font-weight: normal;
+    margin: 20px 0 0 0;
+    line-height: 1;
+  }
+  h2 {
+    color: var(--color-2);
+    font-size: 24px;
+    font-weight: normal;
+    margin: 30px 0 20px 60px;
+  }
+`
+const ButtonComponent = BaseComponent.withComponent('button')
+
 export const Button = styled(ButtonComponent)`
-  background-color: ${props => props.primary ? 'var(--color-3)' : 'var(--color-7)'};
+  background-color: ${props => props.primary ? 'var(--color-3)' : 'var(--color-0)'};
   color: ${props => props.primary ? 'var(--color-0)': 'var(--color-3)'};
   padding: 6px 18px;
   font-family: 'Coda';
@@ -34,5 +76,28 @@ export const Button = styled(ButtonComponent)`
     background-color: var(--color-3-light);
     border-color: var(--color-3-light);
     color: var(--color-0);
+  }
+`
+export const Section = styled.section`
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 50px 30px;
+  position: relative;
+  &::before {
+    /* content: ''; */
+    width: 100%;
+    height: calc(100%);
+    /* background: #005f3c; */
+    /* background: ${props => props.bg}; */
+    opacity: 0.5;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    /* left: calc(50% - 50vw); */
+    /* transform: skew(0, -2deg); */
+  }
+  h2 {
+    margin-top: 0;
   }
 `
