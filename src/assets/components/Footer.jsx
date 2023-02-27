@@ -2,20 +2,20 @@ import styled from "styled-components"
 import { Section, Button, device } from "./Common"
 
 const StyledFooter = styled(Section.withComponent('footer'))`
-  background: rgba(26, 26, 26, 1);
-  padding: 0;
+  padding: 10px 0 40px;
   .form-contact {
-    margin-left: 50px;
+    border-radius: 8px;
+    max-width: 500px;
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    max-width: 540px;
     .title {
       font-size: 40px;
       color: var(--color-3);
       grid-column: 1/3;
       line-height: 1;
+      margin-bottom: 20px;
     }
     input, textarea {
       background: var(--color-0);

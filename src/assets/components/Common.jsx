@@ -83,20 +83,6 @@ export const Section = styled.section`
   margin: auto;
   padding: 50px 50px 30px;
   position: relative;
-  &::before {
-    /* content: ''; */
-    width: 100%;
-    height: calc(100%);
-    /* background: #005f3c; */
-    /* background: ${props => props.bg}; */
-    opacity: 0.5;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    /* left: calc(50% - 50vw); */
-    /* transform: skew(0, -2deg); */
-  }
   h2 {
     margin-top: 0;
   }

@@ -13,7 +13,8 @@
     "@fontsource/dm-mono": "^4.5.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

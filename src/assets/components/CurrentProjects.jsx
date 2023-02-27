@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import { Section, device } from "./Common"
+import React from 'react'
+import { ReactComponent as IconExternalLink } from '../../../public/external-link.svg'
 
 const StyledSection = styled(Section)`
   .project-set {
@@ -7,22 +9,36 @@ const StyledSection = styled(Section)`
     grid-template-columns: repeat(4, 1fr);
     column-gap: 20px;
     .project {
-      padding: 10px;
       border-radius: 8px;
       background: var(--color-0);
       .image {
-        max-width: 100%;
+        max-width: calc(100% - 20px);
         border-radius: 8px;
+        padding: 10px;
       }
       .title {
+        display: flex;
+        justify-content: space-between;
         color: var(--color-3);
-        background-color: var(--color-0);
-        border-radius: 4px;
         padding: 0 20px;
         font-size: 20px;
+        span {
+          margin-right: 10px;
+        }
+        svg {
+          margin-top: 2px;
+        }
+        &:hover {
+          color: var(--color-3-light);
+          cursor: pointer;
+          svg path {
+            fill: var(--color-3-light);
+          }
+        }
       }
       .text {
         color: var(--color-1);
+        padding: 0 20px;
         mark {
           background-color: transparent;
           color: var(--color-2);
@@ -39,9 +55,12 @@ export default function CurrentProjects() {
       <div className="project-set">
         <div className="project">
           <img className="image" src="./projects/bandstats-1.png" />
-          <span className="title">BandStats</span>
+          <div className="title">
+            <span>BandStats</span>
+            <IconExternalLink />
+          </div>
           <p className="text">
-            A simple and convenient tool for evaluating the activity of a group and its members
+            Simple and convenient tool for evaluating the activity of a group and its members
           </p>
           <p className="text">
             <mark>Tech stack:</mark> React, React Router, Chart.js, Chakra, Firebase, Vite
@@ -52,7 +71,10 @@ export default function CurrentProjects() {
         </div>
         <div className="project">
           <img className="image" src="./projects/portfolio-1.png" />
-          <span className="title">Portfolio</span>
+          <div className="title">
+            <span>Portfolio</span>
+            <IconExternalLink />
+          </div>
           <p className="text">
             It's my web portfolio where you can fine some information about my skills, experience,
             current projects, and send me message
@@ -66,7 +88,10 @@ export default function CurrentProjects() {
         </div>
         <div className="project">
           <img className="image" src="./projects/canvas-game-1.png" />
-          <span className="title">Canvas Game</span>
+          <div className="title">
+            <span>Canvas Game</span>
+            <IconExternalLink />
+          </div>
           <p className="text">
             Here am learning base principles of game development, creating unusual labyrinth game
           </p>
@@ -79,7 +104,10 @@ export default function CurrentProjects() {
         </div>
         <div className="project">
           <img className="image" src="./projects/shop-1.png" />
-          <span className="title">Shop</span>
+          <div className="title">
+            <span>Shop</span>
+            <IconExternalLink />
+          </div>
           <p className="text">
             Internet store, completely under development
           </p>

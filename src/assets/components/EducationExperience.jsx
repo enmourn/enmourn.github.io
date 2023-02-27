@@ -81,6 +81,11 @@ const StyledSection = styled(Section)`
       .text {
         color: var(--color-1);
       }
+      .link {
+        color: var(--color-7);
+        text-decoration: none;
+        margin-top: auto;
+      }
     }
   }
 `
@@ -94,41 +99,46 @@ export default function EducationExperience() {
       <div className="item-set">
         <div className="item">
           <span className="date">2008-2013</span>
-          <a className="title" href="https://en.vogu35.ru/">Vologda State University</a>
+          <span className="title">Vologda State University</span>
           <p className="text">
             Informatics and computer engineering&nbsp;/&nbsp;computers, complexes, systems and networks
           </p>
+          <a className="link" href="https://en.vogu35.ru/">en.vogu35.ru</a>
         </div>
         <div className="item">
           <span className="date">2013-2017</span>
-          <a className="title" href="https://cioko.edu35.ru/">Сenter of informatization and education</a>
+          <span className="title">Сenter of informatization and education</span>
           <p className="text">
             Engineer programmer 1st category (PHP, MySQL)
           </p>
+          <a className="link" href="https://cioko.edu35.ru/">cioko.edu35.ru</a>
         </div>
         <div className="item">
           <span className="date">2017-2021</span>
-          <a className="title" href="https://papara.ru/">Papara.ru</a>
+          <span className="title">Papara.ru</span>
           <p className="text">
             Frontend developer (HTML, JavaScript, jQuery, CSS, SCSS, Gulp, Webpack, Node.js, Git, Docker,
             Photoshop, Figma)
           </p>
+          <a className="link" href="https://papara.ru/">papara.ru</a>
         </div>
         <div className="item">
           <span className="date">2020-2022</span>
-          <a className="title" href="https://5systems.ru/">5Systems</a>
+          <span className="title">5Systems</span>
           <p className="text">
             Full stack web developer, mobile developer (HTML, JavaScript, Vue, jQuery, CSS, SCSS, 
             PHP, RedBeanPHP, MySQL, PostgreSQL, Git, Android Studio, Xcode, Figma)
           </p>
+          <a className="link" href="https://5systems.ru/">5systems.ru</a>
         </div>
         <div className="item">
           <span className="date">NOW</span>
-          <a className="title" href="http://enmourn.github.io">enmourn.github.io</a>
+          <span className="title">enmourn.github.io</span>
           <p className="text">
             Freelancer (HTML, JavaScript, React, React Router, Chakra, Create React App, Vite,
             Firebase, Git, Figma)
           </p>
+          <a className="link" href="http://enmourn.github.io">enmourn.github.io</a>
         </div>
       </div>
     </StyledSection>
