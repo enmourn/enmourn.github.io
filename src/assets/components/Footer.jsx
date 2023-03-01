@@ -2,11 +2,10 @@ import styled from "styled-components"
 import { Section, Button, device } from "./Common"
 
 const StyledFooter = styled(Section.withComponent('footer'))`
-  padding: 10px 0 40px;
   .form-contact {
     border-radius: 8px;
     max-width: 500px;
-    padding-top: 50px;
+    padding-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -39,7 +38,7 @@ const StyledFooter = styled(Section.withComponent('footer'))`
   }
   .copyright {
     position: absolute;
-    right: 0;
+    right: 30px;
     bottom: 39px;
     color: #353535;
     font-size: 13px;

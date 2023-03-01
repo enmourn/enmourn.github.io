@@ -17,7 +17,7 @@ const StyledSection = styled(Section)`
         font-size: 20px;
       }
       .text {
-        padding: 20px 20px 0px;
+        padding: 20px;
         margin: 0;
         color: var(--color-1);
         mark {
@@ -30,8 +30,7 @@ const StyledSection = styled(Section)`
         background-size: cover;
         background-position: 0 50%;
         width: calc(100% - 20px);
-        margin: 20px 10px 10px;
-        /* width: 100%; */
+        margin: auto 10px 10px;
         height: 200px;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;

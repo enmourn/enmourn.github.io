@@ -81,7 +81,7 @@ export const Button = styled(ButtonComponent)`
 export const Section = styled.section`
   max-width: 1200px;
   margin: auto;
-  padding: 50px 50px 30px;
+  padding: 50px 30px 30px;
   position: relative;
   h2 {
     margin-top: 0;
