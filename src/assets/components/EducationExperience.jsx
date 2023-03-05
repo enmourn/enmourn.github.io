@@ -32,6 +32,12 @@ const StyledSection = styled(Section)`
         margin-top: auto;
       }
     }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+    }
   }
 `
 

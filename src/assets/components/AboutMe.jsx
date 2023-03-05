@@ -45,6 +45,22 @@ const StyledSection = styled(Section)`
         }
       }
     }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+      .item:nth-of-type(3) {
+        grid-column: 1/3;
+      }
+    }
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+      .item:nth-of-type(3) {
+        grid-column: auto;
+      }
+      .item .img {
+        background-position: 0 44%;
+      }
+    }
   }
 `
 

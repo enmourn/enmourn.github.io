@@ -14,6 +14,9 @@ const Project = styled.div`
   @media (max-width: 768px) {
     min-width: calc(50% - 10px);
   }
+  @media (max-width: 520px) {
+    min-width: 100%;
+  }
 `
 const Image = styled.img`
   max-width: calc(100% - 20px);

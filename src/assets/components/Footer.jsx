@@ -4,6 +4,7 @@ import { Section, Button, device } from "./Common"
 const StyledFooter = styled(Section.withComponent('footer'))`
   .form-contact {
     border-radius: 8px;
+    width: 100%;
     max-width: 500px;
     padding-top: 30px;
     display: grid;
@@ -34,6 +35,20 @@ const StyledFooter = styled(Section.withComponent('footer'))`
       justify-self: start;
       padding-left: 50px;
       padding-right: 50px;
+    }
+    @media (max-width: 520px) {
+      grid-template-columns: 1fr;
+      .title {
+        grid-column: auto
+      }
+      input {
+        &[name=email] {
+          grid-column: auto;
+        }
+      }
+      textarea {
+        grid-column: auto;
+      }
     }
   }
   .copyright {
