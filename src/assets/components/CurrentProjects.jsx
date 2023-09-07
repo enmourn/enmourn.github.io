@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Section } from "./Common"
-import { ReactComponent as IconExternalLink } from '../../../public/external-link.svg'
-import Slider from './Slider'
+import { ReactComponent as IconExternalLink } from "./icons/external-link.svg"
+import Slider from "./Slider"
 
 const Project = styled.div`
   min-width: calc(25% - 15px);
@@ -52,48 +52,57 @@ const Mark = styled.mark`
 export default function CurrentProjects() {
   const projects = [
     {
-      img: '/projects/bandstats-1.png',
-      title: 'BandStats',
-      description: 'Simple and convenient tool for evaluating the activity of a group and its members',
-      techStack: 'React, React Router, Chakra, Chart.js, Firebase, Vite',
-      toDo: 'Add month statistic'
+      img: "/projects/bandstats-1.png",
+      title: "BandStats",
+      description: "Simple and convenient tool for evaluating the activity of a group and its members",
+      techStack: "React, React Router, Chakra, Chart.js, Firebase, Vite",
+      toDo: "Add month statistic",
     },
     {
-      img: './projects/portfolio-1.png',
-      title: 'Portfolio',
+      img: "./projects/portfolio-1.png",
+      title: "Portfolio",
       description: `It's my web portfolio where you can fine some information about my skills, experience,
       current projects, and send me message`,
-      techStack: 'React, Styled Components, Vite',
-      toDo: 'Add light theme and language switcher'
+      techStack: "React, Styled Components, Vite",
+      toDo: "Add light theme and language switcher",
     },
     {
-      img: './projects/canvas-game-1.png',
-      title: 'Canvas Game',
-      description: 'Here am learning base principles of game development, creating unusual labyrinth game',
-      techStack: 'HTML5, JavaScript ES6, Vite',
-      toDo: ''
+      img: "./projects/canvas-game-1.png",
+      title: "Canvas Game",
+      description: "Here am learning base principles of game development, creating unusual labyrinth game",
+      techStack: "HTML5, JavaScript ES6, Vite",
+      toDo: "",
     },
     {
-      img: './projects/shop-1.png',
-      title: 'Shop',
-      description: 'Internet store',
-      techStack: 'React, Redux, TypeScript, Styled Components, Firebase, Vite',
-      toDo: 'Completely under development'
-    }
+      img: "./projects/shop-1.png",
+      title: "Shop",
+      description: "Internet store",
+      techStack: "React, Redux, TypeScript, Styled Components, Firebase, Vite",
+      toDo: "Completely under development",
+    },
   ]
   return (
     <Section>
       <h2>Current projects</h2>
       <Slider>
-      {projects.map(project => 
-        <Project key={project.title}>
-          <Image src={project.img}/>
-          <Title>{project.title}<IconExternalLink /></Title>
-          <Text>{project.description}</Text>
-          <Text><Mark>Tech stack: </Mark>{project.techStack}</Text>
-          <Text><Mark>To do: </Mark>{project.toDo}</Text>
-        </Project>
-      )}
+        {projects.map((project) => (
+          <Project key={project.title}>
+            <Image src={project.img} />
+            <Title>
+              {project.title}
+              <IconExternalLink />
+            </Title>
+            <Text>{project.description}</Text>
+            <Text>
+              <Mark>Tech stack: </Mark>
+              {project.techStack}
+            </Text>
+            <Text>
+              <Mark>To do: </Mark>
+              {project.toDo}
+            </Text>
+          </Project>
+        ))}
       </Slider>
     </Section>
   )

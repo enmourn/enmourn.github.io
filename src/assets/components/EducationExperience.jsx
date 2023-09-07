@@ -68,7 +68,7 @@ export default function EducationExperience() {
           <span className="date">2017-2021</span>
           <span className="title">Papara.ru</span>
           <p className="text">
-            Frontend developer (HTML5, CSS, SCSS, JavaScript ES5, jQuery Gulp, Webpack, Node.js, Git, Docker,
+            Frontend developer (HTML5, Pug, CSS, SCSS, JavaScript ES5, jQuery Gulp, Webpack, Node.js, Git, Docker,
             Photoshop, Figma)
           </p>
           <a className="link" href="https://papara.ru/" target="_blank">papara.ru</a>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { ReactComponent as IconArrowLeft } from '../../../public/arrow-left.svg'
-import { ReactComponent as IconArrowRight } from '../../../public/arrow-right.svg'
+import { ReactComponent as IconArrowLeft } from "./icons/arrow-left.svg"
+import { ReactComponent as IconArrowRight } from "./icons/arrow-right.svg"
 import React, { useState, useEffect, useRef } from "react"
 
 const Viewport = styled.div`
@@ -13,7 +13,7 @@ const Viewport = styled.div`
   }
 `
 const Pagination = styled.div`
-  display: ${props => props.active ? 'flex' : 'none'};
+  display: ${(props) => (props.active ? "flex" : "none")};
   justify-content: center;
   margin: 30px;
 `
@@ -21,7 +21,7 @@ const Button = styled.button`
   height: 20px;
   background: none;
   border: none;
-  visibility: ${props => props.active ? 'visible' : 'hidden'};
+  visibility: ${(props) => (props.active ? "visible" : "hidden")};
   cursor: pointer;
 `
 const Items = styled.div`
@@ -35,7 +35,7 @@ const Item = styled.div`
   border: 1px solid var(--color-1);
   border-radius: 50%;
   margin: 0 6px;
-  background: ${props => props.active ? 'var(--color-1)' : 'none'};
+  background: ${(props) => (props.active ? "var(--color-1)" : "none")};
 `
 
 export default function Slider({ children }) {
@@ -45,7 +45,7 @@ export default function Slider({ children }) {
   const block = useRef()
   const handleScroll = () => {
     const projects = Array.from(block.current.children)
-    const newItems = projects.map(project => {
+    const newItems = projects.map((project) => {
       const windowResizeError = 2
       const offsetLeft = project.offsetLeft - block.current.scrollLeft
       const offsetRight = offsetLeft + project.clientWidth - windowResizeError
@@ -55,27 +55,31 @@ export default function Slider({ children }) {
   }
   const handleMove = (dir) => {
     const index = dir ? items.indexOf(false, items.indexOf(true)) : items.indexOf(true) - 1
-    block.current.children[index].scrollIntoView({block: "nearest", behavior: "smooth"})
+    block.current.children[index].scrollIntoView({ block: "nearest", behavior: "smooth" })
   }
   useEffect(() => {
-    window.addEventListener('resize', handleScroll)
+    window.addEventListener("resize", handleScroll)
     handleScroll()
-    return () => window.removeEventListener('resize', handleScroll)
+    return () => window.removeEventListener("resize", handleScroll)
   }, [])
   return (
     <>
-    <Viewport ref={block} onScroll={handleScroll}>{children}</Viewport>
-    <Pagination active={leftAccess || rightAccess}>
-      <Button active={leftAccess} onClick={() => handleMove(false)}>
-        <IconArrowLeft />
-      </Button>
-      <Items>
-        {items.map((item, index) => <Item key={index} active={item}/>)}
-      </Items>
-      <Button active={rightAccess} onClick={() => handleMove(true)}>
-        <IconArrowRight />
-      </Button>
-    </Pagination>
+      <Viewport ref={block} onScroll={handleScroll}>
+        {children}
+      </Viewport>
+      <Pagination active={leftAccess || rightAccess}>
+        <Button active={leftAccess} onClick={() => handleMove(false)}>
+          <IconArrowLeft />
+        </Button>
+        <Items>
+          {items.map((item, index) => (
+            <Item key={index} active={item} />
+          ))}
+        </Items>
+        <Button active={rightAccess} onClick={() => handleMove(true)}>
+          <IconArrowRight />
+        </Button>
+      </Pagination>
     </>
   )
 }
