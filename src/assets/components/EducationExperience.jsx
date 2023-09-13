@@ -41,12 +41,12 @@ const StyledSection = styled(Section)`
   }
 `
 
-
-
 export default function EducationExperience() {
   return (
     <StyledSection bg="black">
-      <h2 className="heading">Education / Experience</h2>
+      <h2 className="heading" id="education-experience">
+        Education / Experience
+      </h2>
       <div className="item-set">
         <div className="item">
           <span className="date">2008-2013</span>
@@ -54,15 +54,17 @@ export default function EducationExperience() {
           <p className="text">
             Informatics and computer engineering&nbsp;/&nbsp;computers, complexes, systems and networks
           </p>
-          <a className="link" href="https://en.vogu35.ru/" target="_blank">en.vogu35.ru</a>
+          <a className="link" href="https://en.vogu35.ru/" target="_blank">
+            en.vogu35.ru
+          </a>
         </div>
         <div className="item">
           <span className="date">2013-2017</span>
           <span className="title">Сenter of informatization and education</span>
-          <p className="text">
-            Engineer programmer 1st category (HTML, CSS, PHP, MySQL)
-          </p>
-          <a className="link" href="https://cioko.edu35.ru/" target="_blank">cioko.edu35.ru</a>
+          <p className="text">Software engineer of 1 category (HTML, CSS, PHP, MySQL)</p>
+          <a className="link" href="https://cioko.edu35.ru/" target="_blank">
+            cioko.edu35.ru
+          </a>
         </div>
         <div className="item">
           <span className="date">2017-2021</span>
@@ -71,25 +73,30 @@ export default function EducationExperience() {
             Frontend developer (HTML5, Pug, CSS, SCSS, JavaScript ES5, jQuery Gulp, Webpack, Node.js, Git, Docker,
             Photoshop, Figma)
           </p>
-          <a className="link" href="https://papara.ru/" target="_blank">papara.ru</a>
+          <a className="link" href="https://papara.ru/" target="_blank">
+            papara.ru
+          </a>
         </div>
         <div className="item">
           <span className="date">2020-2022</span>
           <span className="title">5Systems</span>
           <p className="text">
-            Full stack web developer, mobile developer (HTML5, JavaScript ES6, CSS, SCSS, React, Vue, jQuery 
-            PHP, RedBeanPHP, MySQL, PostgreSQL, Git, Android Studio, Xcode, Figma)
+            Full stack web developer, mobile developer (HTML5, JavaScript ES6, CSS, SCSS, React, Vue, jQuery PHP,
+            RedBeanPHP, MySQL, PostgreSQL, Git, Android Studio, Xcode, Figma)
           </p>
-          <a className="link" href="https://5systems.ru/" target="_blank">5systems.ru</a>
+          <a className="link" href="https://5systems.ru/" target="_blank">
+            5systems.ru
+          </a>
         </div>
         <div className="item">
           <span className="date">NOW</span>
           <span className="title">enmourn.github.io</span>
           <p className="text">
-            Freelancer (HTML5, JavaScript ES6, SCSS, React, React Router, Chakra, CRA, Vite,
-            Firebase, Git, Figma)
+            Freelancer (HTML5, JavaScript ES6, SCSS, React, React Router, Chakra, CRA, Vite, Firebase, Git, Figma)
           </p>
-          <a className="link" href="http://enmourn.github.io">enmourn.github.io</a>
+          <a className="link" href="http://enmourn.github.io">
+            enmourn.github.io
+          </a>
         </div>
       </div>
     </StyledSection>

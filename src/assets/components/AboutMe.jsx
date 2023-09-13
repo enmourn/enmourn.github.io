@@ -35,13 +35,13 @@ const StyledSection = styled(Section)`
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
         &.item-1 {
-          background-image: url('/about-1.png');
+          background-image: url("/about-1.png");
         }
         &.item-2 {
-          background-image: url('/about-2.png');
+          background-image: url("/about-2.png");
         }
         &.item-3 {
-          background-image: url('/about-3.png');
+          background-image: url("/about-3.png");
         }
       }
     }
@@ -67,32 +67,32 @@ const StyledSection = styled(Section)`
 export default function AboutMe() {
   return (
     <StyledSection bg="var(--color-0)">
-      <h2 className="title">About me</h2>
+      <h2 className="title" id="about-me">
+        About me
+      </h2>
       <div className="list">
         <div className="item">
           <span className="title">Play music</span>
           <p className="text">
-            I like to <mark>play music</mark> and I have been a member of the Dig Me No Grave 
-            band for nine years, <mark>two albums, two extended plays, three splits</mark> and dozens
-            of concerts in different venues.
+            I like to <mark>play music</mark> and I have been a member of the Dig Me No Grave band for nine years,{" "}
+            <mark>two albums, two extended plays, three splits</mark> and dozens of concerts in different venues.
           </p>
           <div className="img item-1"></div>
         </div>
         <div className="item">
           <span className="title">Traveling</span>
           <p className="text">
-            I prefer to spend my free time <mark>traveling</mark> by car, bicycle, on foot and I dream
-            of mastering water modes of transport in order <mark>to get to hard-to-reach places</mark> where
-            I have never been before.
+            I prefer to spend my free time <mark>traveling</mark> by car, bicycle, on foot and I dream of mastering
+            water modes of transport in order <mark>to get to hard-to-reach places</mark> where I have never been
+            before.
           </p>
           <div className="img item-2"></div>
         </div>
         <div className="item">
           <span className="title">Big hobby</span>
           <p className="text">
-            My third <mark>big hobby</mark> is technology, programming, audio engineering, mechanics, 
-            construction and <mark>all the technical tools</mark> that allow you to create something new 
-            and make our live better.
+            My third <mark>big hobby</mark> is technology, programming, audio engineering, mechanics, construction and{" "}
+            <mark>all the technical tools</mark> that allow you to create something new and make our live better.
           </p>
           <div className="img item-3"></div>
         </div>

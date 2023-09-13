@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Code from "./Code";
-import { Button, device } from './Common';
+import styled from "styled-components"
+import Code from "./Code"
+import { Button, device } from "./Common"
 
 const Section = styled.section`
   display: grid;
@@ -17,7 +17,7 @@ const Section = styled.section`
   ${device.tablet} {
     column-gap: 30px;
     padding-bottom: 20px;
-  } 
+  }
   ${device.mobileL} {
     grid-template-columns: 1fr;
     h1 {
@@ -36,7 +36,7 @@ const Section = styled.section`
 `
 const Content = styled.div`
   grid-column: 1/9;
-  background: 'red';
+  background: "red";
   ${device.mobileL} {
     grid-column: auto;
     grid-row: 3;
@@ -78,17 +78,23 @@ const Profile = styled.div`
 `
 
 export default function Skills() {
+  const scrollToForm = () => {
+    document.querySelector("footer").scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <Section>
       <h1>Web Development</h1>
       <Content>
-        <h2>Skills</h2>
+        <h2 id="skills">Skills</h2>
         <Code />
       </Content>
       <Profile>
         <img src="/avatar.png" />
         <div>
-          <Button primary>Contact me</Button>
+          <Button primary onClick={scrollToForm}>
+            Contact me
+          </Button>
           <Button>Download CV</Button>
         </div>
       </Profile>

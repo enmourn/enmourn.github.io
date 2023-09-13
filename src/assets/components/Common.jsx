@@ -1,21 +1,21 @@
 import styled, { createGlobalStyle } from "styled-components"
 
 const BaseComponent = styled.div`
-  width: ${props => props.w};
-  height: ${props => props.h};
-  padding: ${props => props.p};
-  margin: ${props => props.m};
-  margin-top: ${props => props.mt};
-  margin-right: ${props => props.mr};
-  margin-bottom: ${props => props.mb};
-  margin-left: ${props => props.ml};
+  width: ${(props) => props.w};
+  height: ${(props) => props.h};
+  padding: ${(props) => props.p};
+  margin: ${(props) => props.m};
+  margin-top: ${(props) => props.mt};
+  margin-right: ${(props) => props.mr};
+  margin-bottom: ${(props) => props.mb};
+  margin-left: ${(props) => props.ml};
 `
 
 export const device = {
   laptop: `@media (max-width: 1280px)`,
   tablet: `@media (max-width: 1024px)`,
   mobileL: `@media (max-width: 768px)`,
-  mobileM: `@media (max-width: 480px)`
+  mobileM: `@media (max-width: 480px)`,
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -56,15 +56,18 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 24px;
     font-weight: normal;
     margin: 30px 0 20px 60px;
+    ${device.mobileL} {
+      margin-left: 20px;
+    }
   }
 `
-const ButtonComponent = BaseComponent.withComponent('button')
+const ButtonComponent = BaseComponent.withComponent("button")
 
 export const Button = styled(ButtonComponent)`
-  background-color: ${props => props.primary ? 'var(--color-3)' : 'var(--color-0)'};
-  color: ${props => props.primary ? 'var(--color-0)': 'var(--color-3)'};
+  background-color: ${(props) => (props.primary ? "var(--color-3)" : "var(--color-0)")};
+  color: ${(props) => (props.primary ? "var(--color-0)" : "var(--color-3)")};
   padding: 6px 18px;
-  font-family: 'Coda';
+  font-family: "Coda";
   font-size: 15px;
   border-width: 1px;
   border-style: solid;
@@ -85,5 +88,8 @@ export const Section = styled.section`
   position: relative;
   h2 {
     margin-top: 0;
+  }
+  ${device.mobileL} {
+    padding: 50px 15px 30px;
   }
 `

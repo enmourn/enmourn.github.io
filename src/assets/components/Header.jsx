@@ -17,7 +17,7 @@ const Section = styled.header`
   height: 60px;
   position: relative;
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 1px;
@@ -26,16 +26,17 @@ const Section = styled.header`
     left: 0;
     top: 50%;
     z-index: -1;
-    animation: ${animateLine} 1 2s
+    animation: ${animateLine} 1 2s;
   }
 `
-const Contant = styled.nav`
+const Content = styled.div`
   max-width: 1200px;
   padding: 0 30px;
   height: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  align-items: center;
   color: var(--color-1);
   ${device.tablet} {
     display: flex;
@@ -43,7 +44,7 @@ const Contant = styled.nav`
     padding: 0 10px;
   }
 `
-const Menu = styled.div`
+const Nav = styled.nav`
   grid-column: 1/9;
   display: flex;
   align-items: center;
@@ -51,14 +52,47 @@ const Menu = styled.div`
   list-style: none;
   padding: 0 30px;
   font-size: 17px;
+  z-index: 10;
   ${device.tablet} {
     position: absolute;
     left: 40px;
     top: 60px;
-    display: ${props => props.active ? 'grid' : 'none'};
-    padding: 20px;
+    display: ${(props) => (props.active ? "grid" : "none")};
+    padding: 10px 20px;
     border-radius: 8px;
     background-color: var(--color-6);
+  }
+`
+const NavItem = styled.button`
+  font-size: 17px;
+  border: none;
+  background: none;
+  color: var(--color-1);
+  position: relative;
+  transition: transform 0.2s;
+  cursor: pointer;
+  opacity: 0;
+  animation-name: ${animateNavItems};
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-delay: ${(props) => props.delay}s;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #121212;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  ${device.tablet} {
+    &::before {
+      background: #666;
+    }
   }
 `
 const Socials = styled.div`
@@ -68,39 +102,29 @@ const Socials = styled.div`
   align-items: center;
   justify-content: flex-end;
 `
-const LineBlock = styled.div`
-  height: 100%;
+const SocialsItem = styled.a`
   display: flex;
-  align-items: center;
-  gap: 10px;
   position: relative;
   opacity: 0;
   animation-name: ${animateNavItems};
   animation-fill-mode: forwards;
   animation-duration: 0.5s;
-  animation-delay: ${props => props.delay}s;
-  a {
-    display: flex;
-    transition: transform 0.2s;
-    text-decoration: none;
-    color: var(--colo-1);
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-  &:before {
-    content: '';
-    display: block;
-    width: calc(110% + 20px);
+  animation-delay: ${(props) => props.delay}s;
+  &::before {
+    content: "";
+    width: 148%;
     height: 1px;
     background: #121212;
     position: absolute;
-    left: calc(-5% - 10px);
     top: 50%;
+    left: -24%;
     z-index: -1;
   }
+  &:hover {
+    transform: scale(1.1);
+  }
 `
-const Humburger = styled(LineBlock)`
+const Humburger = styled(SocialsItem)`
   display: none;
   ${device.tablet} {
     display: flex;
@@ -108,34 +132,40 @@ const Humburger = styled(LineBlock)`
 `
 
 export default function Header() {
-  const [menuActive, setMenuActive] = useState(false)
+  const [navActive, setNavActive] = useState(false)
+  const handlerScroll = (e) => {
+    document.getElementById(e.target.getAttribute("to")).scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
     <Section>
-      <Contant>
-        <Humburger onClick={() => setMenuActive(!menuActive)}>
-          <img src="/humburger.svg"/>
+      <Content>
+        <Humburger onClick={() => setNavActive(!navActive)}>
+          <img src="/humburger.svg" />
         </Humburger>
-        <Menu active={menuActive}>
-          <LineBlock delay={0}>
-            <a href="#skills">Skills</a>
-          </LineBlock>
-          <LineBlock delay={0.2}>
-            <a href="#current-project">Current Projects</a>
-          </LineBlock>
-          <LineBlock delay={0.4}>
-            <a href="education-experience">Education / Experience</a>
-          </LineBlock>
-          <LineBlock delay={0.6}>
-            <a href="about-me">About me</a>
-          </LineBlock>  
-        </Menu>
+        <Nav active={navActive}>
+          <NavItem delay={0} onClick={handlerScroll} to="skills">
+            Skills
+          </NavItem>
+          <NavItem delay={0.2} onClick={handlerScroll} to="current-projects">
+            Current Projects
+          </NavItem>
+          <NavItem delay={0.4} onClick={handlerScroll} to="education-experience">
+            Education / Experience
+          </NavItem>
+          <NavItem delay={0.6} onClick={handlerScroll} to="about-me">
+            About Me
+          </NavItem>
+        </Nav>
         <Socials>
-          <LineBlock delay={0.8}>
-            <a href="https://t.me/enmourn" target="_blank"><img src="/telegram.svg" /></a>
-            <a href="https://www.instagram.com/en_mourn" target="_blank"><img src="/instagram.svg" /></a>
-          </LineBlock>
+          <SocialsItem delay={0.8} href="https://t.me/enmourn" target="_blank">
+            <img src="/telegram.svg" />
+          </SocialsItem>
+          <SocialsItem delay={0.8} href="https://www.instagram.com/en_mourn" target="_blank">
+            <img src="/instagram.svg" />
+          </SocialsItem>
         </Socials>
-      </Contant>
+      </Content>
     </Section>
   )
 }
