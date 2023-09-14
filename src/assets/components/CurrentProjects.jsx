@@ -82,7 +82,7 @@ export default function CurrentProjects() {
     {
       img: "./projects/grotesquesounds.png",
       title: "Grotesque Sounds",
-      link: "https://grotesquesounds.ru",
+      link: "http://grotesquesounds.ru",
       description: "Internet store for Grotesque Sounds metal music label",
       techStack: "jQuery, PHP, MySQL",
       toDo: "Restore cart, add new payment methods",
