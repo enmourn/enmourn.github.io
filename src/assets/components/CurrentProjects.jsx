@@ -5,7 +5,7 @@ import { device } from "./Common"
 
 const Projects = styled.div`
   display: grid;
-  gap: 15px;
+  gap: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   ${device.mobileL} {
     grid-template-columns: 1fr 1fr;
@@ -19,15 +19,6 @@ const Project = styled.div`
   border-radius: 8px;
   background: var(--color-0);
   padding-bottom: 10px;
-  /* @media (max-width: 1024px) {
-    min-width: calc(33.33% - 13.33px);
-  }
-  @media (max-width: 768px) {
-    min-width: calc(50% - 10px);
-  }
-  @media (max-width: 520px) {
-    min-width: 100%;
-  } */
 `
 const Image = styled.img`
   max-width: calc(100% - 20px);
@@ -97,7 +88,7 @@ export default function CurrentProjects() {
       toDo: "Restore cart, add new payment methods",
     },
     {
-      img: "./projects/grotesquesounds.png",
+      img: "./projects/metal-circle.png",
       title: "Metal Circle",
       link: "/metalcircle",
       description: "Marketplace for underground metal bands, music lables and fans",

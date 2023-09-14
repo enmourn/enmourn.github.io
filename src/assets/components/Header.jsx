@@ -105,6 +105,7 @@ const Socials = styled.div`
 const SocialsItem = styled.a`
   display: flex;
   position: relative;
+  transition: transform 0.2s;
   opacity: 0;
   animation-name: ${animateNavItems};
   animation-fill-mode: forwards;
@@ -134,6 +135,7 @@ const Humburger = styled(SocialsItem)`
 export default function Header() {
   const [navActive, setNavActive] = useState(false)
   const handlerScroll = (e) => {
+    setNavActive(false)
     document.getElementById(e.target.getAttribute("to")).scrollIntoView({ behavior: "smooth" })
   }
 
