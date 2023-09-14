@@ -8,7 +8,7 @@ const Blocks = styled.div`
   ${device.tablet} {
     grid-template-columns: 1fr 1fr;
   }
-  ${device.phoneL} {
+  ${device.mobileL} {
     grid-template-columns: 1fr;
   }
 `
@@ -19,7 +19,7 @@ const Block = styled.div`
 const Photo = styled.img`
   box-sizing: border-box;
   border-radius: 50%;
-  width: 100%;
+  max-width: 100%;
   padding: 10px;
 `
 const Title = styled.div`
@@ -50,7 +50,7 @@ export default function AboutMe() {
       <h2 id="about-me">About me</h2>
       <Blocks>
         <Block>
-          <Photo src="/about-1.png" />
+          <Photo src="/about-1.jpg" />
           <Title>Play music</Title>
           <Text>
             I like to play music and I have been a member of the Dig Me No Grave band for nine years, two albums, two
@@ -58,7 +58,7 @@ export default function AboutMe() {
           </Text>
         </Block>
         <Block>
-          <Photo src="/about-2.png" />
+          <Photo src="/about-2.jpg" />
           <Title>Traveling</Title>
           <Text>
             I prefer to spend my free time traveling by car, bicycle, on foot and I dream of mastering water modes of
@@ -66,7 +66,7 @@ export default function AboutMe() {
           </Text>
         </Block>
         <Block>
-          <Photo src="/about-3.png" />
+          <Photo src="/about-3.jpg" />
           <Title>Big hobby</Title>
           <Text>
             My third big hobby is technology, programming, audio engineering, mechanics, construction and all the
