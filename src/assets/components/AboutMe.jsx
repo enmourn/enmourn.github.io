@@ -47,7 +47,7 @@ const Text = styled.p`
 export default function AboutMe() {
   return (
     <Section>
-      <h2 id="about-me">About me</h2>
+      <h2 id="about-me">About me : {")"}</h2>
       <Blocks>
         <Block>
           <Photo src="/about-1.jpg" />

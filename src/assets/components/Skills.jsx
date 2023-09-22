@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Code from "./Code"
 import { Button, device } from "./Common"
+import portfolioPDF from "../Mishin_Ivan.pdf"
 
 const Section = styled.section`
   display: grid;
@@ -95,7 +96,9 @@ export default function Skills() {
           <Button primary onClick={scrollToForm}>
             Contact me
           </Button>
-          <Button>Download CV</Button>
+          <Button as="a" href={portfolioPDF} download style={{ textDecoration: "none" }}>
+            Download CV
+          </Button>
         </div>
       </Profile>
     </Section>

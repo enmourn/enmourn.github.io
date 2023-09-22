@@ -6,11 +6,11 @@ const Container = styled.div`
   background-color: var(--color-0);
   border-radius: 8px;
   padding: 10px 10px 0px 60px;
-  font-family: 'DM Mono';
+  font-family: "DM Mono";
   font-size: 15px;
   overflow: hidden;
   &:before {
-    content: '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32';
+    content: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32";
     display: block;
     width: 20px;
     position: absolute;
@@ -27,13 +27,13 @@ const Container = styled.div`
 `
 const Line = styled.div`
   background-color: var(--color-0);
-  color: ${props => props.color};
-  margin-left: ${props => props.tab * 20}px;
+  color: ${(props) => props.color};
+  margin-left: ${(props) => props.tab * 20}px;
   position: relative;
-  padding-bottom: ${props => props.last ? 4 : 0}px;
+  padding-bottom: ${(props) => (props.last ? 4 : 0)}px;
   &::before {
-    content: '·· ·· ·· ·· ';
-    display: ${props => props.tab ? 'block' : 'none'};
+    content: "·· ·· ·· ·· ";
+    display: ${(props) => (props.tab ? "block" : "none")};
     width: 10px;
     position: absolute;
     left: -18px;
@@ -49,25 +49,42 @@ const Mark = styled.mark`
 export default function Code(props) {
   return (
     <Container>
-      <Line color='var(--color-1)'>Hello, world {`{`}</Line>
+      <Line color="var(--color-1)">Hello, world {`{`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-3)'>
-        My name is <Mark>Ivan</Mark>, I'm a <Mark>web developer</Mark> with <Mark>5 years</Mark> of professional experience. In&nbsp;my work I used the following technologies:</Line>
+      <Line tab={1} color="var(--color-3)">
+        My name is <Mark>Ivan</Mark>, I'm a <Mark>web developer</Mark> with <Mark>5 years</Mark> of professional
+        experience. In&nbsp;my work I used the following technologies:
+      </Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-2)'>Frontend development {`{`}</Line>
-      <Line tab={2} color='var(--color-1)'>HTML, JavaScript, React, React Router, Vue, jQuery, CSS, SCSS, Styled Compontnts, Chakra, Gulp, Webpack, CRA, Vite</Line>
-      <Line tab={1} color='var(--color-2)'>{`}`}</Line>
+      <Line tab={1} color="var(--color-2)">
+        Frontend development {`{`}
+      </Line>
+      <Line tab={2} color="var(--color-1)">
+        HTML, JavaScript, TypeScript, React, Redux Toolkit, React Router, Vue, jQuery, CSS, SCSS, Styled Compontnts,
+        Chakra, Gulp, Webpack, CRA, Vite, FireBase
+      </Line>
+      <Line tab={1} color="var(--color-2)">{`}`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-2)'>Backend development {`{`}</Line>
-      <Line tab={2} color='var(--color-1)'>NodeJS, Express, Websocket, PHP, RedBeanPHP, MySQL, PostgreSQL, NoSQL</Line>
-      <Line tab={1} color='var(--color-2)'>{`}`}</Line>
+      <Line tab={1} color="var(--color-2)">
+        Backend development {`{`}
+      </Line>
+      <Line tab={2} color="var(--color-1)">
+        NodeJS, Express, Websocket, PHP, RedBeanPHP, MySQL, PostgreSQL, NoSQL
+      </Line>
+      <Line tab={1} color="var(--color-2)">{`}`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-2)'>Other helpers {`{`}</Line>
-      <Line tab={2} color='var(--color-1)'>Git, Docker, Figma, Photoshop</Line>
-      <Line tab={1} color='var(--color-2)'>{`}`}</Line>
+      <Line tab={1} color="var(--color-2)">
+        Other helpers {`{`}
+      </Line>
+      <Line tab={2} color="var(--color-1)">
+        Git, Docker, Figma, Photoshop
+      </Line>
+      <Line tab={1} color="var(--color-2)">{`}`}</Line>
       <Line tab={1}>&nbsp;</Line>
-      <Line tab={1} color='var(--color-3)'>I will be glad to cooperate! Thanks {`=>`}</Line>
-      <Line color='var(--color-1)'>{`}`}</Line>
+      <Line tab={1} color="var(--color-3)">
+        I will be glad to cooperate! Thanks {`=>`}
+      </Line>
+      <Line color="var(--color-1)">{`}`}</Line>
       <Line last>&nbsp;</Line>
     </Container>
   )

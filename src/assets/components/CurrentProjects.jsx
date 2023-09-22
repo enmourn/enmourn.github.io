@@ -92,13 +92,13 @@ export default function CurrentProjects() {
       title: "Metal Circle",
       link: "/metalcircle",
       description: "Marketplace for underground metal bands, music lables and fans",
-      techStack: "React, Redux, TypeScript, Styled Components, Firebase, Vite",
+      techStack: "React, Redux Toolkit, TypeScript, Styled Components, Firebase, Vite",
       toDo: "Make basic functionality",
     },
   ]
   return (
     <Section>
-      <h2 id="current-projects">Current projects</h2>
+      <h2 id="current-projects">My current projects</h2>
       <Projects>
         {projects.map((project) => (
           <Project key={project.title}>
