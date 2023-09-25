@@ -108,8 +108,15 @@ export default function Footer() {
       <span className="title">Contact me</span>
       {state != "submited" && (
         <form className="form-contact" onSubmit={submit}>
-          <input name="name" placeholder="Name" required disabled={state == "pending"} />
-          <input name="email" placeholder="Email" required disabled={state == "pending"} />
+          <input name="name" placeholder="Name" required disabled={state == "pending"} title="Your name" />
+          <input
+            name="email"
+            placeholder="Email"
+            required
+            disabled={state == "pending"}
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            title="youraddress@mail.com"
+          />
           <input
             name="phone"
             placeholder="Phone"
@@ -117,6 +124,8 @@ export default function Footer() {
             disabled={state == "pending"}
             onChange={handleChangePhone}
             value={phone}
+            pattern="(\+7|8)\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}"
+            title="8 (900) 800 76 54 or +7 (900) 800 76 54"
           />
           <textarea name="message" placeholder="Message" rows="7" required disabled={state == "pending"}></textarea>
           <Button className="button-submit" primary disabled={state == "pending"}>
