@@ -87,6 +87,21 @@ export default function Footer() {
       setState("submited")
     })
   }
+  const [phone, setPhone] = useState("")
+  const handleChangePhone = (e) => {
+    const value = e.target.value
+    let numbers = value.match(/\d/g) || []
+    numbers.unshift(value[0] === "+" ? "+" : "")
+    if (numbers[1]) numbers[1] = `${numbers[1]} (`
+    if (numbers[4]) numbers[4] = `${numbers[4]}) `
+    if (numbers[7]) numbers[7] = `${numbers[7]} `
+    if (numbers[9]) numbers[9] = `${numbers[9]} `
+    numbers = numbers.slice(0, 12)
+    if (`${value} ` === phone || `${value})` === phone || `${value}(` === phone) {
+      numbers = numbers.slice(0, -1)
+    }
+    setPhone(numbers.join(""))
+  }
 
   return (
     <StyledFooter bg="#111">
@@ -95,7 +110,14 @@ export default function Footer() {
         <form className="form-contact" onSubmit={submit}>
           <input name="name" placeholder="Name" required disabled={state == "pending"} />
           <input name="email" placeholder="Email" required disabled={state == "pending"} />
-          <input name="phone" placeholder="Phone" required disabled={state == "pending"} />
+          <input
+            name="phone"
+            placeholder="Phone"
+            required
+            disabled={state == "pending"}
+            onChange={handleChangePhone}
+            value={phone}
+          />
           <textarea name="message" placeholder="Message" rows="7" required disabled={state == "pending"}></textarea>
           <Button className="button-submit" primary disabled={state == "pending"}>
             Send
