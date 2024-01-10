@@ -63,6 +63,15 @@ export default function CurrentProjects() {
       toDo: "Add month statistic",
     },
     {
+      img: "./projects/collagepro.png",
+      title: "Collage Pro",
+      link: "/collagepro",
+      description: `Collage maker with the ability to change canvas, template, save project localy and
+      getting preview and final image`,
+      techStack: "Preact, Typescipt, Styled Components, Vite",
+      toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control",
+    },
+    {
       img: "./projects/portfolio.png",
       title: "Portfolio",
       link: "/",
