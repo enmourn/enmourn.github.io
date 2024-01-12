@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Code from "./Code"
 import { Button, device } from "./Common"
-import portfolioPDF from "../Mishin_Ivan.pdf"
+import portfolioPDF from "../Mishin_Ivan_Portfolio.pdf"
 
 const Section = styled.section`
   display: grid;

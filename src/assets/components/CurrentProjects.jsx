@@ -72,6 +72,14 @@ export default function CurrentProjects() {
       toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control",
     },
     {
+      img: "./projects/grotesquesounds.png",
+      title: "Grotesque Sounds",
+      link: "http://grotesquesounds.ru",
+      description: "Internet store for Grotesque Sounds metal music label",
+      techStack: "jQuery, PHP, MySQL",
+      toDo: "Restore cart, add new payment methods",
+    },
+    {
       img: "./projects/portfolio.png",
       title: "Portfolio",
       link: "/",
@@ -88,14 +96,7 @@ export default function CurrentProjects() {
       techStack: "HTML5, JavaScript ES6, Vite",
       toDo: "Add map saving, goal, timer and high score table",
     },
-    {
-      img: "./projects/grotesquesounds.png",
-      title: "Grotesque Sounds",
-      link: "http://grotesquesounds.ru",
-      description: "Internet store for Grotesque Sounds metal music label",
-      techStack: "jQuery, PHP, MySQL",
-      toDo: "Restore cart, add new payment methods",
-    },
+
     {
       img: "./projects/metal-circle.png",
       title: "Metal Circle",
