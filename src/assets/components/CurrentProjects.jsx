@@ -68,7 +68,7 @@ export default function CurrentProjects() {
       link: "/collagepro",
       description: `Collage maker with the ability to change canvas, template, save project localy and
       getting preview and final image`,
-      techStack: "Preact, Typescipt, Styled Components, Vite",
+      techStack: "Preact, Typescipt, Zustand, Styled Components, Vite",
       toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control",
     },
     {
