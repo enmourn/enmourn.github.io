@@ -69,7 +69,15 @@ export default function CurrentProjects() {
       description: `Collage maker with the ability to change canvas, template, save project localy and
       getting preview and final image`,
       techStack: "Preact, Typescipt, Zustand, Styled Components, Vite",
-      toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control",
+      toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control, add image filters",
+    },
+    {
+      img: "./projects/lost-in-the-forest.png",
+      title: "Lost In The Forest",
+      link: "/lost-in-the-forest",
+      description: "2D top-down view simulator, created to demonstrate what happens to a person lost in the forest.",
+      techStack: "HTML5, TypeScript, ES6, Vite",
+      toDo: "Sprite graphics",
     },
     {
       img: "./projects/grotesquesounds.png",
@@ -88,15 +96,6 @@ export default function CurrentProjects() {
       techStack: "React, Styled Components, Vite",
       toDo: "Add light theme and language switcher",
     },
-    {
-      img: "./projects/canvas-game.png",
-      title: "Canvas Game",
-      link: "/canvas-game",
-      description: "Here am learning base principles of game development, creating unusual labyrinth game",
-      techStack: "HTML5, JavaScript ES6, Vite",
-      toDo: "Add map saving, goal, timer and high score table",
-    },
-
     {
       img: "./projects/metal-circle.png",
       title: "Metal Circle",
