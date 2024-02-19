@@ -166,6 +166,9 @@ export default function Header() {
           <SocialsItem delay={0.8} href="https://www.instagram.com/en_mourn" target="_blank">
             <img src="/instagram.svg" />
           </SocialsItem>
+          <SocialsItem delay={0.8} href="https://github.com/enmourn" target="_blank">
+            <img src="/github.svg" />
+          </SocialsItem>
         </Socials>
       </Content>
     </Section>
