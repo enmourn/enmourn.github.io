@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Section } from "./Common"
+import { Button, Section } from "./Common"
 import { ReactComponent as IconExternalLink } from "./icons/external-link.svg"
 import { device } from "./Common"
 
@@ -15,10 +15,13 @@ const Projects = styled.div`
   }
 `
 const Project = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
   min-width: calc(25% - 15px);
   border-radius: 8px;
   background: var(--color-0);
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 `
 const Image = styled.img`
   max-width: calc(100% - 20px);
@@ -46,65 +49,90 @@ const Title = styled.a`
 const Text = styled.p`
   color: var(--color-1);
   padding: 0 20px;
+  margin: 0;
+  &:last-of-type {
+    margin-bottom: 5px;
+  }
 `
 const Mark = styled.mark`
   background: transparent;
   color: var(--color-2);
 `
 
-export default function CurrentProjects() {
-  const projects = [
-    {
-      img: "/projects/bandstats.png",
-      title: "BandStats",
-      link: "/bandstats",
-      description: "Simple and convenient tool for evaluating the activity of a group and its members",
-      techStack: "React, React Router, Chakra, Chart.js, Firebase, Vite",
-      toDo: "Add month statistic",
-    },
-    {
-      img: "./projects/collagepro.png",
-      title: "Collage Pro",
-      link: "/collagepro",
-      description: `Collage maker with the ability to change canvas, template, save project localy and
+const ViewCode = styled.a`
+  background: var(--color-7);
+  border: none;
+  border-radius: 4px;
+  font-family: "Coda";
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  align-self: flex-start;
+  margin-top: auto;
+  margin-left: 20px;
+  padding: 2px 12px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  &:hover {
+    background: var(--color-6);
+  }
+`
+
+const projects = [
+  {
+    img: "/projects/bandstats.png",
+    title: "BandStats",
+    link: "/bandstats",
+    description: "Simple and convenient tool for evaluating the activity of a group and its members",
+    techStack: "React, React Router, Chakra, Chart.js, Firebase, Vite",
+    toDo: "Add month statistic",
+  },
+  {
+    img: "./projects/collagepro.png",
+    title: "Collage Pro",
+    link: "/collagepro",
+    description: `Collage maker with the ability to change canvas, template, save project localy and
       getting preview and final image`,
-      techStack: "Preact, Typescipt, Zustand, Styled Components, Vite",
-      toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control, add image filters",
-    },
-    {
-      img: "./projects/lost-in-the-forest.png",
-      title: "Lost In The Forest",
-      link: "/lost-in-the-forest",
-      description: "2D top-down view simulator, created to demonstrate what happens to a person lost in the forest.",
-      techStack: "HTML5, TypeScript, ES6, Vite",
-      toDo: "Sprite graphics",
-    },
-    {
-      img: "./projects/grotesquesounds.png",
-      title: "Grotesque Sounds",
-      link: "http://grotesquesounds.ru",
-      description: "Internet store for Grotesque Sounds metal music label",
-      techStack: "jQuery, PHP, MySQL",
-      toDo: "Restore cart, add new payment methods",
-    },
-    {
-      img: "./projects/portfolio.png",
-      title: "Portfolio",
-      link: "/",
-      description: `It's my web portfolio where you can fine some information about my skills, experience,
+    techStack: "Preact, Typescipt, Zustand, Styled Components, Vite",
+    toDo: "Fix rendering bugs, create image optimization, redesign sidebar, make mouse control, add image filters",
+  },
+  {
+    img: "./projects/lost-in-the-forest.png",
+    title: "Lost In The Forest",
+    link: "/lost-in-the-forest",
+    linkCode: "https://github.com/enmourn/lost-in-the-forest",
+    description: "2D top-down view simulator, created to demonstrate what happens to a person lost in the forest.",
+    techStack: "HTML5, TypeScript, ES6, Vite",
+    toDo: "Sprite graphics",
+  },
+  {
+    img: "./projects/grotesquesounds.png",
+    title: "Grotesque Sounds",
+    link: "http://grotesquesounds.ru",
+    description: "Internet store for Grotesque Sounds metal music label",
+    techStack: "jQuery, PHP, MySQL",
+    toDo: "Restore cart, add new payment methods",
+  },
+  {
+    img: "./projects/portfolio.png",
+    title: "Portfolio",
+    link: "/",
+    description: `It's my web portfolio where you can fine some information about my skills, experience,
       current projects, and send me message`,
-      techStack: "React, Styled Components, Vite",
-      toDo: "Add light theme and language switcher",
-    },
-    {
-      img: "./projects/metal-circle.png",
-      title: "Metal Circle",
-      link: "/metalcircle",
-      description: "Marketplace for underground metal bands, music lables and fans",
-      techStack: "React, Redux Toolkit, TypeScript, Styled Components, Firebase, Vite",
-      toDo: "Make basic functionality",
-    },
-  ]
+    techStack: "React, Styled Components, Vite",
+    toDo: "Add light theme and language switcher",
+  },
+  {
+    img: "./projects/metal-circle.png",
+    title: "Metal Circle",
+    link: "/metalcircle",
+    description: "Marketplace for underground metal bands, music lables and fans",
+    techStack: "React, Redux Toolkit, TypeScript, Styled Components, Firebase, Vite",
+    toDo: "Make basic functionality",
+  },
+]
+
+export default function CurrentProjects() {
   return (
     <Section>
       <h2 id="current-projects">My current projects</h2>
@@ -125,6 +153,11 @@ export default function CurrentProjects() {
               <Mark>To do: </Mark>
               {project.toDo}
             </Text>
+            {project.linkCode && (
+              <ViewCode href={project.linkCode} target="_blank">
+                view code
+              </ViewCode>
+            )}
           </Project>
         ))}
       </Projects>
