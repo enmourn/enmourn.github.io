@@ -26,7 +26,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-3: #FFD058;
     --color-3-light: #f8e2a9;
     --color-6: #4f4e4e;
-    --color-7: #353535;
+    --color-7: #333;
+    --color-8: #999;
+    --color-9: #222;
   }
   body {
     background-image: url('/bg.png');
